@@ -1,0 +1,64 @@
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <app-title [titulo]="'Contacto'" [subtitulo]="'Contactenos'" [texto]="'Ubíquenos a través de nuestra dirección de correo electrónico o llamando a nuestra línea telefónica, puede encontrarnos también en WhatsApp o llenar el formulario con sus datos para poder contactar con usted.'"></app-title>
+      </div>
+      <div class="row" data-aos="fade-up" data-aos-delay="100" data-step="11" data-intro="Informacion contacto">
+        
+        <div class="col-lg-6">
+          <app-info [icono]="'bx bx-map'" [texto1]="'Dirección'" [texto2]="'Colón 561 y boyacá, Edif.Pegar Piso 2 of 203'"></app-info>
+        </div>
+
+        
+        <div class="col-lg-3 col-md-6">
+          <app-info [icono]="'bx bx-envelope'" [texto1]="'Correo'" [texto2]="'cpadinomendozac@gmail.com'"></app-info>
+        </div>
+
+        
+        <div class="col-lg-3 col-md-6">
+          <app-info [icono]="'bx bx-phone-call'" [texto1]="'Llámenos'" [texto2]="'+593 0992931213'"></app-info>
+        </div>
+
+      </div>
+
+      <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="col-lg-6 " data-position= "right" data-step="12" data-intro="Ubicacion en el mapa">
+          <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1DdKo62ga6VF0WYWsSCSd0Nv8c5tMtZxR" width=100% height="384px" allowfullscreen></iframe>
+        </div>
+
+        <div class="col-lg-6" data-position= "left"  data-step="13" data-intro="Formulario de contacto">
+            <!--action="forms/contact.php"-->
+          <form action="forms/contact.php" id="formularioContacto" method="post" role="form" class="php-email-form">
+            <div class="form-row">
+              <div class="col form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" data-rule="minlen:4" data-msg="Por favor, ingrese al menos 4 caracteres" />
+                <div class="validate"></div>
+              </div>
+              <div class="col form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Correo" data-rule="email" data-msg="Por favor, ingrese una dirección de correo valida" />
+                <div class="validate"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Tema" data-rule="minlen:4" data-msg="Por favor, ingrese al menos 8 caracteres de Tema" />
+              <div class="validate"></div>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Por favor, dejenos su mensaje" placeholder="Mensaje"></textarea>
+              <div class="validate"></div>
+            </div>
+            <div class="mb-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">¡Su mensaje ha sido enviado!</div>
+            </div>
+            <div class="text-center"><button id="submitForm" type="submit" name="submit">Enviar Mensaje</button></div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Contact Section -->
