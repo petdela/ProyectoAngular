@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header.component';
-import { LogoModule } from 'src/app/@subComponent/logo/logo.module';
-import { NavbarModule } from 'src/app/@subComponent/navbar/navbar.module';
-
-
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 @NgModule({
   declarations: [HeaderComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule
   ],
   exports: [HeaderComponent]
 })

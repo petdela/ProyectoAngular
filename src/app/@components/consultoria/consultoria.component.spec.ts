@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CopyRComponent } from './copy-r.component';
+import { ConsultoriaComponent } from './consultoria.component';
 
-describe('CopyRComponent', () => {
-  let component: CopyRComponent;
-  let fixture: ComponentFixture<CopyRComponent>;
+describe('ConsultoriaComponent', () => {
+  let component: ConsultoriaComponent;
+  let fixture: ComponentFixture<ConsultoriaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CopyRComponent ]
+      declarations: [ ConsultoriaComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CopyRComponent);
+    fixture = TestBed.createComponent(ConsultoriaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
