@@ -33,7 +33,7 @@
                                 <div class="userData ml-3">
 								<!-- INFORMACION RAPIDA DEL USUARIO VA AQUI -->
 									<h2 class="d-block" id="nombreusuario" style="font-size: 1.5rem; font-weight: bold;">Sam Weather</h2>
-									<h6 class="d-block" id="resenaescrita">1 reseñas escritas</h6>
+									<!--h6 class="d-block" id="resenaescrita">1 reseñas escritas</h6-->
                                 </div>
                                 <div class="ml-auto">
                                     <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Descartar cambios" />
@@ -70,7 +70,7 @@
 											<div class="col-sm-3 col-md-2 col-5">
 												<label style="font-weight:bold;">Nombre completo: </label>
 											</div>
-											<div class="col-md-8 col-6">
+											<div class="col-md-8 col-6" id="nombrecompleto">
 												Sam Lizard Weather Lightwood
 											</div>
 										</div>
@@ -80,7 +80,7 @@
 											<div class="col-sm-3 col-md-2 col-5">
 												<label style="font-weight:bold;">Correo electrónico: </label>
 											</div>
-											<div class="col-md-8 col-6">
+											<div class="col-md-8 col-6" id="correo">
 												samweather95@hotmail.com
 											</div>
 										</div>
@@ -90,7 +90,7 @@
 											<div class="col-sm-3 col-md-2 col-5">
 												<label style="font-weight:bold;">Fecha de registro: </label>
 											</div>
-											<div class="col-md-8 col-6">
+											<div class="col-md-8 col-6" id="fechareg">
 												3 de Abril de 2017
 											</div>
 										</div>
@@ -102,9 +102,13 @@
 									
 									<div class="tab-pane fade" id="infoEdit" role="tabpanel" aria-labelledby="infoEdit-tab">
 										<!-- AQUI VA LA OPCION PARA EDITAR EL NOMBRE DEL USUARIO -->
-										<form class="row">
-											<label class="col-sm-3 col-md-2 col-5" style="font-weight:bold;">Nuevo nombre: </label>
-											<input type="text" class="col-md-8 col-6" id="nuevonombre" name="nuevonombre">
+										<form action="http://localhost:3000/users/update" method="POST" class="row">
+											<label class="col-sm-3 col-md-2 col-5" style="font-weight:bold;">Nombres: </label>
+											<input type="text" class="col-md-8 col-6" id="nuevonombre" name="nombres">
+											<label class="col-sm-3 col-md-2 col-5">Puede ser vacío</label>
+											
+											<label class="col-sm-3 col-md-2 col-5" style="font-weight:bold;">Apellidos: </label>
+											<input type="text" class="col-md-8 col-6" id="nuevoapellido" name="apellidos">
 											<label class="col-sm-3 col-md-2 col-5">Puede ser vacío</label>
 											
 											<!-- ESPACIOS -->
@@ -116,9 +120,9 @@
 											<label class="col-sm-3 col-md-2 col-5" style="font-weight:bold;"> </label>
 											
 											<label class="col-sm-3 col-md-2 col-5" style="font-weight:bold;">Elija una opción:</label>
-											<input type="button" class="btn btn-secondary" id="btnClientUpdate" value="Realizar cambios" />
-											<label class="col-sm-3 col-md-2 col-5" style="font-weight:bold;"> </label>
-											<input type="button" class="btn btn-secondary" id="btnPhotoUpdate" value="Eliminar imagen de perfil" />
+											<input type="submit" class="btn btn-secondary" id="btnClientUpdate" value="Realizar cambios" />
+											<!--label class="col-sm-3 col-md-2 col-5" style="font-weight:bold;"> </label>
+											<input type="button" class="btn btn-secondary" id="btnPhotoUpdate" value="Eliminar imagen de perfil" /-->
 											<!-- <input type="submit" class="btn btn-secondary" id="btnClientUpdate" value="Realizar cambios" /> USARLO Y BORRAR LA LINEA ANTERIOR DE SER NECESARIO!!!-->
 											<!-- <input type="submit" class="btn btn-secondary" id="btnPhotoUpdate" value="Eliminar imagen de perfil" /> USARLO Y BORRAR LA LINEA ANTERIOR DE SER NECESARIO!!!-->
 										</form>
@@ -130,17 +134,18 @@
 										<!-- AQUI VA LA LISTA DE RESEÑAS DEL USUARIO -->
                                         <div class="row" id="div1">
 											<div class="col-sm-3 col-md-2 col-5">
-												<label style="font-weight:bold;">Reseña 1: </label>
+												<label style="font-weight:bold;">Reseña : </label>
 											</div>
 											<div class="col-md-8 col-6" id="1">
-												<p class="parrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nisi massa, venenatis non lacus eget, convallis vehicula tortor. Proin facilisis ante non ex accumsan, a imperdiet enim euismod. Quisque vestibulum arcu mollis est tempor, vitae faucibus turpis placerat. Proin ut pretium ante, vitae efficitur lacus. Fusce convallis a eros ut sodales. Proin facilisis mattis tellus a ullamcorper. Curabitur scelerisque lacus non orci rhoncus pellentesque. Nullam eu elit non ex aliquam bibendum eu semper arcu.Praesent arcu enim, sagittis eu quam ac, gravida imperdiet odio. Pellentesque vel turpis eu lorem porttitor iaculis.</p>
+												<p class="parrafo" id="resenaContenido">No ha escrito ninguna resena todavia</p>
 											</div>
 											
 										</div>
 										
-										<form class="row">
+										<form action="http://localhost:3000/res/delete" method="POST" class="row">
 											<label class="col-sm-3 col-md-2 col-5" style="font-weight:bold;">¿Eliminar reseña?</label>
-											<input type="button" class="btn btn-secondary" id="btnReviewDelete" value="Eliminar reseña" />
+											<input type="submit" class="btn btn-secondary" id="btnReviewDelete" value="Eliminar reseña" />
+											<input type="text" value="" id="id_resena" style="display: none;" name="id">
 											<!-- <input type="submit" class="btn btn-secondary" id="btnReviewDelete" value="Eliminar reseña" /> USARLO Y BORRAR LA LINEA ANTERIOR DE SER NECESARIO!!!-->
 										</form>
 										
@@ -150,12 +155,10 @@
 									
 									<div class="tab-pane fade" id="reviewsEdit" role="tabpanel" aria-labelledby="reviewsEdit-tab">
                                         <!-- AQUI VA LA OPCION PARA EDITAR ALGUNAR RESEÑA DEL USUARIO -->
-										<form class="row">
-											<label class="col-sm-3 col-md-2 col-5" style="font-weight:bold;">Elegir reseña: </label>
-											<select class="col-md-8 col-6" id="resenas" name="resenas">
-												<option value="1">1</option>
+										<form action="http://localhost:3000/res/update" method="POST" class="row">
+											<label class="col-sm-3 col-md-2 col-5" style="font-weight:bold;">Identificador de reseña: </label>
+											<select class="col-md-8 col-6" id="resenas" name="id">
 											</select>
-											<label class="col-sm-3 col-md-2 col-5">No olvidar elegir!</label>
 											
 											<!-- ESPACIOS -->
 											<label class="col-sm-3 col-md-2 col-5" style="font-weight:bold;"> </label>
@@ -165,10 +168,10 @@
 											<label class="col-sm-3 col-md-2 col-5" style="font-weight:bold;"> </label>
 											<label class="col-sm-3 col-md-2 col-5" style="font-weight:bold;"> </label>
 											
-											<label class="col-sm-3 col-md-2 col-5" style="font-weight:bold;">Escriba el texto a editar: </label>
-											<textarea class="col-md-8 col-6" id="resenaeditada" name="resenaeditada" cols="70"></textarea>
+											<label class="col-sm-3 col-md-2 col-5" style="font-weight:bold;">Escriba el texto a editar:</label>
+											<textarea class="col-md-8 col-6" id="resenaeditada" name="contenido" cols="70"></textarea>
 											<label class="col-sm-3 col-md-2 col-5">Es posible dejar este espacio vacío</label>
-											<input type="button" class="btn btn-secondary" id="btnUpdate" value="Actualizar Reseña" />
+											<input type="submit" class="btn btn-secondary" id="btnUpdate" value="Actualizar Reseña" />
 											<!-- <input type="submit" class="btn btn-secondary" id="btnUpdate" value="Actualizar Reseña" /> USARLO Y BORRAR LA LINEA ANTERIOR DE SER NECESARIO!!!-->
 										</form>
                                     </div>
@@ -177,10 +180,11 @@
 									
 									<div class="tab-pane fade" id="reviewsAdd" role="tabpanel" aria-labelledby="reviewsAdd-tab">
 										
-										<form class="row">
+										<form method="POST" action="http://localhost:3000/res/save" class="row">
 											<label class="col-sm-3 col-md-2 col-5" style="font-weight:bold;">Escriba su nueva reseña: </label>
-											<textarea class="col-md-8 col-6" id="resenanueva" name="resenanueva" cols="70"></textarea>
+											<textarea class="col-md-8 col-6" id="resenanueva" name="contenido" cols="70"></textarea>
 											<label class="col-sm-3 col-md-2 col-5">Es posible dejar este espacio vacío</label>
+											<input type="text" name="cliente" value="" id="id_cliente_anadir" style="display: none;">
 											
 											<!-- ESPACIOS -->
 											<label class="col-sm-3 col-md-2 col-5" style="font-weight:bold;"> </label>
@@ -190,7 +194,7 @@
 											<label class="col-sm-3 col-md-2 col-5" style="font-weight:bold;"> </label>
 											<label class="col-sm-3 col-md-2 col-5" style="font-weight:bold;"> </label>
 											
-											<input type="button" class="btn btn-secondary" id="btnAdd" value="Añadir Reseña" />
+											<input type="submit" class="btn btn-secondary" id="btnAdd" value="Añadir Reseña" />
 											<!-- <input type="submit" class="btn btn-secondary" id="btnAdd" value="Añadir Reseña" /> USARLO Y BORRAR LA LINEA ANTERIOR DE SER NECESARIO!!!-->
 										</form>
 										
