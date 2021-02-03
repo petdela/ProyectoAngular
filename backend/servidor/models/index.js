@@ -1,0 +1,34 @@
+const dbConfig = require("../config/db.config.js");
+
+const Sequelize = require("sequelize");
+const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
+  host: dbConfig.HOST,
+  dialect: dbConfig.dialect,
+  operatorsAliases: false,
+
+  pool: {
+    max: dbConfig.pool.max,
+    min: dbConfig.pool.min,
+    acquire: dbConfig.pool.acquire,
+    idle: dbConfig.pool.idle
+  }
+});
+
+const db = {};
+
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+
+db.user = require("./user.model.js")(sequelize, Sequelize);
+db.serv = require("./serv.model.js")(sequelize, Sequelize);
+db.res = require("./res.model.js")(sequelize, Sequelize);
+db.subs = require("./subs.model.js")(sequelize, Sequelize);
+db.contact = require("./contact.model.js")(sequelize, Sequelize);
+
+/*db.users.hasMany(db.detalle, { as: "detalles" });
+db.detalle.belongsTo(db.maestro, {
+  foreignKey: "maestroId",
+  as: "maestro",
+});*/
+
+module.exports = db;
