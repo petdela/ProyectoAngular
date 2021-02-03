@@ -5,6 +5,7 @@ import { LittleCardModule } from 'src/app/@subComponent/little-card/little-card.
 import { SubHeaderModule } from '../sub-header/sub-header.module';
 import { SideBarModule } from '../side-bar/side-bar.module';
 import { InfoCardModule } from 'src/app/@subComponent/info-card/info-card.module';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 
 
@@ -15,7 +16,8 @@ import { InfoCardModule } from 'src/app/@subComponent/info-card/info-card.module
     LittleCardModule,
     InfoCardModule,
     SubHeaderModule,
-    SideBarModule
+    SideBarModule,
+    AppRoutingModule
   ],
   exports:[ReportesComponent]
 })

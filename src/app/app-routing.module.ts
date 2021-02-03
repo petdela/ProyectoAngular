@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AnadirComponent } from './@components/anadir/anadir.component';
 import { AuditoriaComponent } from './@components/auditoria/auditoria.component';
 import { BoletinComponent } from './@components/boletin/boletin.component';
+import { ClienteComponent } from './@components/cliente/cliente.component';
 import { ConsultaComponent } from './@components/consulta/consulta.component';
 import { ConsultoriaComponent } from './@components/consultoria/consultoria.component';
 import { ContServComponent } from './@components/cont-serv/cont-serv.component';
@@ -46,6 +47,7 @@ const routes: Routes = [
   {path: 'Login', component: LogComponent},
   {path: 'Registro', component: RegComponent},
   {path: 'Logout', component: LogoutComponent},
+  {path: 'Cliente', component: ClienteComponent}
 ];
 
 @NgModule({
