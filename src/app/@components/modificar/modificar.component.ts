@@ -11,6 +11,47 @@ export class ModificarComponent implements OnInit {
     
   ngOnInit(): void {
     this.inicial();
+    this.llenarSelect();
+  }
+
+  llenarSelect = () => {
+    fetch('http://localhost:3000/serv')
+    .then( (resultado) => {
+      return resultado.json();
+    })
+    .then( (data) => {
+      let select = document.getElementById("servAMod");
+      for (var  service of data){
+          let option = document.createElement("option");
+          option.setAttribute("value",service.Codigo);
+          option.textContent = service.Titulo;
+          option.addEventListener("click",function() {
+            //let titulo= document.getElementById("tit");
+            let desc= document.getElementById("text");
+            let id= option.getAttribute("value");
+            fetch('http://localhost:3000/serv/'+ id)
+              .then( (resultado) => {
+                console.log(resultado);
+              return resultado.json();
+            })
+            .then( (data) => {
+              //titulo.textContent= data[0].Titulo;
+              desc.textContent= data[0].MiniDes;
+            })
+            .catch( (error) => {
+              console.log("Error ",error)
+        
+            })
+         });
+         select.appendChild(option);
+        }
+      })
+
+    .catch( (error) => {
+      console.log("Error ",error)
+  
+    })
+
   }
 
   inicial = () => {

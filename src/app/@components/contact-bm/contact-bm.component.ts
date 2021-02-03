@@ -10,8 +10,35 @@ export class ContactBmComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.llenarInfo();
     this.cargarStep();
   }
+
+  llenarInfo = () => {
+    fetch('http://localhost:3000/contact')
+    .then( (resultado) => {
+      return resultado.json();
+    })
+    .then( (data) => {
+      let correo = document.getElementById("inputCorreo");
+      let telefono = document.getElementById("inputTelf");
+      let direccion = document.getElementById("direccion");
+      correo.setAttribute('value', data[0].Correo);
+      telefono.setAttribute('value', data[0].Telefono);
+      direccion.setAttribute('value', data[0].Direccion);
+      /*correo.textContent = data[0].Correo;
+      telefono.textContent = data[0].Telefono;
+      direccion.textContent = data[0].Direccion;*/
+      })
+    .catch( (error) => {
+      console.log("Error ",error)
+  
+    })
+
+  }
+
+
+
   cargarStep = () => {
 
     const slidePage = document.querySelector(".slide-page") as HTMLElement;

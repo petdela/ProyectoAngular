@@ -28,8 +28,10 @@ export class ConsultaComponent implements OnInit {
             let titulo= document.getElementById("tit");
             let desc= document.getElementById("text");
             let id= option.getAttribute("value");
+            console.log('hola2');
             fetch('http://localhost:3000/serv/'+ id)
               .then( (resultado) => {
+                console.log(resultado);
               return resultado.json();
             })
             .then( (data) => {

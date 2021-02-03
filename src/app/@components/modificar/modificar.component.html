@@ -29,17 +29,14 @@
 
     <div class="form-outer">
 
-      <form action="#" id="anadirServicio">
+      <form action="http://localhost:3000/serv/update" method="POST" id="anadirServicio">
 
         <div class="page slide-page">
           <!--div class="title">Informacion Basica:</div-->
           <div class="field">
             <div class="label">Selecciona el servicio a modificar</div>
-            <select>
+            <select name="codigo" id="servAMod">
               <option>Sin seleccionar..</option>
-              <option>Servicio 1</option>
-              <option>Servicio 2</option>
-              <option>Servicio 3</option>
             </select>
           </div>
           <div class="field">
@@ -52,7 +49,7 @@
           <div class="field" id="fieldText">
             <div class="label">Ingrese la Descripcion del Servicio</div>
             <!--input type="text" name="" value="Descripcion"-->
-            <textarea name="" form="anadirServicio">Descripcion del servicio aqui....</textarea>
+            <textarea name="minides" id="text" form="anadirServicio">Descripcion del servicio aqui....</textarea>
           </div>
           <div class="field btns">
             <button class="prev-1 prev">Anterior</button>

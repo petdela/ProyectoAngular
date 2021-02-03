@@ -10,8 +10,32 @@ export class ContactBcComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.llenarInfo();
     this.cargarStep();
   }
+
+  llenarInfo = () => {
+    fetch('http://localhost:3000/contact')
+    .then( (resultado) => {
+      return resultado.json();
+    })
+    .then( (data) => {
+      let correo = document.getElementById("correoAdmin");
+      let telefono = document.getElementById("telefonos");
+      let direccion = document.getElementById("direccion");
+      console.log(data);
+      correo.textContent = data[0].Correo;
+      telefono.textContent = data[0].Telefono;
+      direccion.textContent = data[0].Direccion;
+      })
+    .catch( (error) => {
+      console.log("Error ",error)
+  
+    })
+
+  }
+
+
   cargarStep = () => {
 
     const slidePage = document.querySelector(".slide-page") as HTMLElement;

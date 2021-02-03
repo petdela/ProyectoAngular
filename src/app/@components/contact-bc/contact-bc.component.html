@@ -5,18 +5,17 @@
     <div class="divContacto">
       <div>
         <p><b>Correo: </b></p>
-        <p>cpadinomendoza@gmail.com</p>
+        <p id="correoAdmin"></p>
       </div>
       <div>
         <p><b>Telefonos: </b></p>
-        <p>0123456789</p>
-        <p>0123456789</p>
+        <p id="telefonos"></p>
       </div>
       <div class="direccion">
         <p><b>Direccion: </b></p>
-        <p>Portete y la 29</p>
+        <p id="direccion"></p>
       </div>
-      <form class="formEliminarContacto">
+      <form action="http://localhost:3000/contact/delete" method="POST" class="formEliminarContacto">
         <p>¿Eliminar Datos de Contacto?</p>
         <input type="submit" name="Eliminar" value="Eliminar">
       </form>

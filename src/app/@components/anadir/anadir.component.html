@@ -29,13 +29,13 @@
 
     <div class="form-outer">
 
-      <form action="#" id="anadirServicio">
+      <form action="http://localhost:3000/serv/save" method="POST" id="anadirServicio">
 
         <div class="page slide-page">
           <!--div class="title">Informacion Basica:</div-->
           <div class="field">
             <div class="label">Nombre del Servicio</div>
-            <input type="text" name="" value="Nombre">
+            <input type="text" name="titulo" value="Nombre">
           </div>
           <div class="field">
             <button class="firstNext">Siguiente</button>
@@ -47,7 +47,7 @@
           <div class="field" id="fieldText">
             <div class="label">Ingrese la Descripcion del Servicio</div>
             <!--input type="text" name="" value="Descripcion"-->
-            <textarea name="" form="anadirServicio">Descripcion del servicio aqui....</textarea>
+            <textarea name="minides" form="anadirServicio">Descripcion del servicio aqui....</textarea>
           </div>
           <div class="field btns">
             <button class="prev-1 prev">Anterior</button>

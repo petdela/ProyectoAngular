@@ -11,6 +11,28 @@ export class EliminarComponent implements OnInit {
     
   ngOnInit(): void {
     this.inicial();
+    this.llenarSelect();
+  }
+
+  llenarSelect = () => {
+    fetch('http://localhost:3000/serv')
+    .then( (resultado) => {
+      return resultado.json();
+    })
+    .then( (data) => {
+      let select = document.getElementById("servAElim");
+      for (var  service of data){
+          let option = document.createElement("option");
+          option.setAttribute("value",service.Codigo);
+          option.textContent = service.Titulo;
+          select.appendChild(option);
+        }
+      })
+    .catch( (error) => {
+      console.log("Error ",error)
+  
+    })
+
   }
 
   inicial = () => {
