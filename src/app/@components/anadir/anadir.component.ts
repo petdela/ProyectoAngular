@@ -27,14 +27,14 @@ let current = 1;
 nextBtnFirst.addEventListener("click", function(event){
   event.preventDefault();
   var contenedor = document.getElementsByClassName('contenedorAdministrarContenido')[0] as HTMLElement;
-  contenedor.style.height = "650px;"
+  contenedor.style.height = "650px"
   slidePage.style.marginLeft = "-25%";
   var fieldtext = document.getElementsByTagName('textarea')[0];
-  fieldtext.style.minHeight = "190px;"
-  fieldtext.style.maxHeight = "200px;"
+  fieldtext.style.minHeight = "190px"
+  fieldtext.style.maxHeight = "200px"
   //fieldtext.style = "margin-bottom: 20px;"
   var field = document.getElementById('fieldText');
-  field.style.height = "200px;"
+  field.style.height = "200px"
   bullet[current - 1].classList.add("active");
   progressCheck[current - 1].classList.add("active");
   progressText[current - 1].classList.add("active");

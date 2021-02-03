@@ -11,7 +11,6 @@ export class ContServComponent implements OnInit {
 
   ngOnInit(): void {
     this.ocultar();
-    this.cargarStep();
   }
   ocultar = () => {
     let header = document.getElementsByTagName("app-header")[0] as HTMLElement;

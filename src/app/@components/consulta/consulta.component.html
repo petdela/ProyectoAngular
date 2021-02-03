@@ -4,24 +4,21 @@
 
     <div class="seleccionServ">
       <p class="servicio">Servicio:</p>
-      <select id="selectServ">
+      <select id="selectServ" ng-model="selected">
         <option value="">Seleccione un servicio</option>
-        <option>Servicio 1</option>
-        <option>Servicio 2</option>
-        <option>Servicio 3</option>
       </select>
     </div>
 
     <div class="contenidoServ">
       <div class="nombreServ">
         <p class="labelNombre"><b>Nombre del Servicio:</b></p>
-        <p class="contenidoNombre">Servicio 1 [Ejemplo]</p>
+        <p id="tit" class="contenidoNombre"></p>
       </div>
       <div class="descServ">
           <p class="labelDescripcion"><b>Descripcion:</b></p>
           
-          <textarea readonly="true">
-            Loren Ipsum regerr rrrrrrrrrrrrrrr rrrrrrrrrrrrrrgrgwergrrrrrrr rrrrrrrrrrrrrrrrrrrrgwergwergewrgwergwegewrg wergwerfbwefbveuytfvberwuy fvweuyrfvjewrhfvbwjerhfvwejrhfvwejkrhvfwe rjhvfwjekrhvfkwejrhvfg
+          <textarea id="text" readonly="true">
+         
           </textarea>
       </div>
     </div>
