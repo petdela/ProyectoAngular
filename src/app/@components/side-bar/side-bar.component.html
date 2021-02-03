@@ -1,0 +1,38 @@
+
+    <div class="sidebar__title">
+      <div class="sidebar__img">
+        <h1>Menu de Administrador</h1>
+      </div>
+      <i
+        onclick="closeSidebar()"
+        class="fa fa-times"
+        id="sidebarIcon"
+        aria-hidden="true"
+      ></i>
+    </div>
+
+    <div class="sidebar__menu">
+      <div class="sidebar__link active_menu_link">
+        <i class="fa fa-home"></i>
+        <a routerLink="/Admin">Dashboard</a>
+      </div>
+      <h2>MNG</h2>
+      <div class="sidebar__link">
+        <i class="fa fa-user-secret" aria-hidden="true"></i>
+        <a routerLink="/AdminContacto/Consultar">Administrar Contacto</a>
+      </div>
+      <div class="sidebar__link">
+        <i class="fa fa-building-o"></i>
+        <a routerLink="/AdminContenido/Consultar">Administrar Contenido</a>
+      </div>
+      <div class="sidebar__link">
+        <i class="fa fa-wrench"></i>
+        <a href="#">Reportes</a>
+      </div>
+      <div class="sidebar__link">
+        <i class="fa fa-archive"></i>
+        <a routerLink="/AdminBoletin">Boletin de Notificaciones</a>
+      </div>
+      
+    </div>
+

@@ -1,0 +1,24 @@
+.flc-screenNavigator-view-container{
+	position: absolute;
+	background: #EEEEEE;
+	height:250px;
+	width: 500px;
+	top:30%;
+	left: 35%; 
+}
+.success{
+	position: relative;
+	height:100px;
+	width: 490px;	
+	left: 1%; 
+	border-style: dotted;
+   border-width: 1px;
+   border-color: 660033;
+   font-size: 10pt;
+}
+#company-name{
+	text-align: center;
+}
+#salida{
+text-align: center;
+} 

@@ -18,6 +18,20 @@ import { EquipoModule } from './@components/equipo/equipo.module';
 import { InicioModule } from './@components/inicio/inicio.module';
 import { NegociacionesModule } from './@components/negociaciones/negociaciones.module';
 import { PoliticasModule } from './@components/politicas/politicas.module';
+import { BoletinModule } from './@components/boletin/boletin.module';
+import { ContServModule } from './@components/cont-serv/cont-serv.module';
+import { ReportesModule } from './@components/reportes/reportes.module';
+import { LogModule } from './@components/log/log.module';
+import { RegModule } from './@components/reg/reg.module';
+import { ContactoBModule } from './@components/contacto-b/contacto-b.module';
+import { EliminarModule } from './@components/eliminar/eliminar.module';
+import { ModificarModule } from './@components/modificar/modificar.module';
+import { AnadirModule } from './@components/anadir/anadir.module';
+import { ConsultaModule } from './@components/consulta/consulta.module';
+import { ContactBMModule } from './@components/contact-bm/contact-bm.module';
+import { ContactBCModule } from './@components/contact-bc/contact-bc.module';
+import { ContactBAModule } from './@components/contact-ba/contact-ba.module';
+import { LogoutModule } from './@components/logout/logout.module';
 
 
 @NgModule({
@@ -41,8 +55,21 @@ import { PoliticasModule } from './@components/politicas/politicas.module';
     EquipoModule,
     InicioModule,
     NegociacionesModule,
-    PoliticasModule
-
+    PoliticasModule,
+    BoletinModule,
+    ContServModule,
+    ReportesModule,
+    LogModule,
+    RegModule,
+    ContactoBModule,
+    EliminarModule,
+    ModificarModule,
+    AnadirModule,
+    ConsultaModule,
+    ContactBMModule,
+    ContactBCModule,
+    ContactBAModule,
+    LogoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
